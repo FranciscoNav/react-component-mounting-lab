@@ -4,21 +4,16 @@ import Timer from './Timer'
 
 class App extends Component {
 
-  //no props being used here, so we can use the shorthand declaration of state
   state = {
     timerIDs: []
   }
 
-
   //Your code here:
-
-
-
-
-
-
-
-
+  componentDidMount() {
+    // Runs after the first render() lifecycle
+    this.handleAddTimer()
+    console.log('componenetDidMount')
+  }
 
   // No need to modify anything in render or the class methods below
   // Unless, of course, you're curious about how it all works
@@ -54,6 +49,7 @@ class App extends Component {
     this.setState(prevState => ({
       timerIDs: prevState.timerIDs.filter(timer_id => timer_id !== id)
     }))
+    console.log('render?')
   }
 
 
